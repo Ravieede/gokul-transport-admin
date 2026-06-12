@@ -1,0 +1,1480 @@
+/* --- Global Body Styles --- */
+body {
+  background: linear-gradient(135deg, #caaaeb 0%, #fce7f3 50%, #e0f2fe 100%);
+  min-height: 100vh;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+  margin: 0;
+  padding: 100px 0 0 0;
+}
+
+/* --- Auth Form Container --- */
+.auth-container {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 8px 32px rgba(17, 0, 46, 0.08);
+  width: 100%;
+  max-width: 420px;
+  margin: 5rem auto;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* --- Title & Subtitle --- */
+.auth-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #333052;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  font-size: 1rem;
+  color: #7e8499;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Form Layout --- */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* --- Input Fields --- */
+.auth-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-label {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #6d6c7b;
+  margin-bottom: 0.3rem;
+}
+
+.auth-input {
+  padding: 0.85rem 1rem;
+  background: #f4f1fb;
+  border: 1.5px solid #e2d8fb;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  color: #2b265e;
+  outline: none;
+  transition: box-shadow 0.18s, border-color 0.18s;
+}
+
+.auth-input:focus {
+  border-color: #a78bfa;
+  box-shadow: 0 0 0 3px #c4b5fd55;
+}
+
+/* --- Submit Button --- */
+.auth-button {
+  background: linear-gradient(90deg, #8b5cf6 10%, #ec4899 98%);
+  color: #fff;
+  font-weight: 700;
+  padding: 0.95rem 1rem;
+  border-radius: 0.9rem;
+  font-size: 1.09rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.13s, background 0.13s;
+  box-shadow: 0 4px 20px rgba(140, 55, 220, 0.06);
+}
+
+.auth-button:hover {
+  background: linear-gradient(89deg, #7021e8 15%, #d31b88 93%);
+  transform: scale(1.038);
+}
+
+/* --- Message Boxes --- */
+.auth-message {
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  margin-top: 1rem;
+}
+
+.auth-message.success {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.auth-message.error {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* --- Toggle Link --- */
+.auth-toggle {
+  text-align: center;
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-top: 1.5rem;
+}
+
+.auth-switch {
+  background: none;
+  border: none;
+  color: #8b5cf6;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.auth-switch:hover {
+  color: #6d28d9;
+  text-decoration: underline;
+}
+
+/* --- Animation --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+/* logo ni kindhaki shift cheyyadaniki */
+
+.auth-logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.gokul-brand {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.gokul-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #e1ed05, #dd0909, #0bd81c);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 5s ease infinite;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+
+/* --- Navbar --- */
+.navbar {
+  background: linear-gradient(90deg, #8b5cf6 10%, #ec4899 98%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7rem 2.2rem;
+  box-shadow: 0 2px 8px 0 rgba(140,55,220,0.09);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 800;
+}
+.company-name {
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 1px;
+}
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+.nav-link {
+  color: #fff;
+  font-size: 1.08rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.18s;
+}
+.nav-link:hover { color: #ffe7d9; }
+.logout-btn {
+  background: #fff;
+  color: #ec4899;
+  border: none;
+  border-radius: 0.8rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 0.5rem 1.1rem;
+  margin-left: 0.7rem;
+  cursor: pointer;
+  transition: background 0.18s, color 0.18s;
+}
+.logout-btn:hover {
+  background: #ec4899;
+  color: #fff;
+}
+.company-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+  margin-right: 0.5rem;
+  border-radius: 0.5rem;
+
+}
+/* Extra Styles */
+
+
+
+/* --- Drivers Page --- */
+.drivers-container {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
+  padding: 2rem;
+  background: #f9f7fe;
+  box-sizing: border-box;
+}
+
+.driver-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.driver-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  margin: 0;
+}
+
+/* --- Search Bar and Add Button Toolbar --- */
+.driver-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.driver-toolbar .search-bar {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid #186bdc;
+  font-size: 1rem;
+  background: #fff;
+  color: #222;
+  outline: none;
+  transition: border-color 0.14s, box-shadow 0.14s;
+}
+.driver-toolbar .search-bar:focus {
+  border-color: #15803d;
+  box-shadow: 0 0 6px rgba(24, 107, 220, 0.2);
+}
+.driver-toolbar .add-btn {
+  background: #ec4899;
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s;
+}
+.driver-toolbar .add-btn:hover {
+  background: #be185d;
+}
+
+/* --- Driver Card Layout --- */
+.driver-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  width: 100%;
+}
+.driver-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(140, 55, 220, 0.14);
+  padding: 1.2rem;
+  width: calc(33.333% - 1rem);
+  min-width: 280px;
+  max-width: 400px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
+}
+.driver-card:hover {
+  transform: scale(1.02);
+}
+.driver-avatar {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #8b5cf6;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.driver-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.driver-details div {
+  flex: 1 1 45%;
+  font-size: 0.95rem;
+  color: #333052;
+}
+.driver-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Edit Button, Delete Button, Cancel Button, Add Button */
+.add-btn {
+  background-color: #22c55e; /* Tailwind green-500 */
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.add-btn:hover {
+  background-color: #16a34a; /* green-600 */
+}
+
+.edit-btn {
+  background-color: #facc15; /* yellow-400 */
+  color: #333;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #eab308; /* yellow-500 */
+}
+
+/* --- Delete Button (Red) --- */
+.delete-btn {
+  background-color: #ef4444; /* red-500 */
+  color: #fff;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626; /* red-600 */
+}
+
+/* --- Cancel Button (Red, inside form) --- */
+.cancel-btn {
+  background-color: #ef4444;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.6rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.2s ease;
+}
+
+.cancel-btn:hover {
+  background-color: #dc2626;
+}
+
+/* --- Driver Form --- */
+.driver-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(35, 110, 190, 0.15);
+  padding: 1.5rem 1rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  animation: fadeIn 0.3s ease-in-out; 
+
+border-radius: 1rem;
+
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .driver-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  .driver-details {
+    flex-direction: column;
+  }
+  .driver-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+/* Form Actions */
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Already defined earlier, but make sure these exist */
+.add-btn {
+  background-color: #22c55e;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #16a34a;
+}
+
+.cancel-btn {
+  background-color: #ef4444;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #dc2626;
+}
+
+/* OverLay */
+/* --- Modal Overlay --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* --- Modal Content --- */
+
+.modal-content {
+  max-width: 380px; /* Previously 500px */
+  padding: 1.2rem;
+  border-radius: 0.75rem;
+}
+
+.driver-form {
+  padding: 1rem;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.1);
+}
+
+
+
+/* --- Form Title --- */
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #2b1dca;
+}
+
+/* --- Fade In Animation --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+/* --- Form Group --- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333052;
+}
+
+/* --- Form Row for Side-by-Side Fields --- */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.form-row .form-group {
+  flex: 1;
+  min-width: 45%;
+}
+
+/* --- Input Styling --- */
+.driver-form input {
+  padding: 0.6rem 0.9rem;
+  font-size: 0.95rem;
+}
+
+
+.driver-form input:focus {
+  border-color: #8b5cf6;
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+/* --- Form Title --- */
+.form-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #8b5cf6;
+}
+
+/* --- Form Actions --- */
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* --- Buttons --- */
+.add-btn,
+.cancel-btn {
+  font-size: 0.95rem;
+  padding: 0.5rem 1rem;
+}
+
+
+.add-btn {
+  background-color: #22c55e;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #16a34a;
+}
+
+.cancel-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #dc2626;
+}
+/* Mobile Styles */
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .form-title {
+    font-size: 1.3rem;
+  }
+
+  .driver-form input {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.9rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+
+
+
+/* Vehicles Styles */
+/* Container */
+
+.vehicles-container {
+  position: relative;
+  width: 100%;
+  min-height: calc(100vh - 70px);
+  margin-top: 70px;
+  padding: 2rem;
+  background: #f9f7fe;
+  box-sizing: border-box;
+}
+
+.vehicle-header {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.vehicle-header h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #8b5cf6;
+  margin: 0;
+}
+
+/* --- Search Bar and Add Button Toolbar --- */
+.vehicle-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.vehicle-toolbar .search-bar {
+  flex: 1;
+  min-width: 220px;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid #186bdc;
+  font-size: 1rem;
+  background: #fff;
+  color: #222;
+  outline: none;
+  transition: border-color 0.14s, box-shadow 0.14s;
+}
+
+.vehicle-toolbar .search-bar:focus {
+  border-color: #15803d;
+  box-shadow: 0 0 6px rgba(24, 107, 220, 0.2);
+}
+
+.vehicle-toolbar .add-btn {
+  background: #ec4899;
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 0.18s;
+}
+
+.vehicle-toolbar .add-btn:hover {
+  background: #be185d;
+}
+
+/* --- Vehicle Card Layout --- */
+.vehicle-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+.vehicle-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(140, 55, 220, 0.14);
+  padding: 1.2rem;
+  width: calc(33.333% - 1rem);
+  min-width: 280px;
+  max-width: 400px;
+  box-sizing: border-box;
+  transition: transform 0.2s ease;
+}
+
+.vehicle-card:hover {
+  transform: scale(1.02);
+}
+
+.vehicle-avatar {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #8b5cf6;
+  color: white;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.vehicle-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.vehicle-details div {
+  flex: 1 1 45%;
+  font-size: 0.95rem;
+  color: #333052;
+}
+
+.vehicle-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* --- Buttons --- */
+.add-btn {
+  background-color: #22c55e; /* green-500 */
+  color: #fff;
+  border: none;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  cursor: pointer;
+  transition: background 0.18s;
+}
+
+.add-btn:hover {
+  background-color: #16a34a;
+}
+
+.edit-btn {
+  background-color: #facc15; /* yellow-400 */
+  color: #333;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background-color: #eab308;
+}
+
+.delete-btn {
+  background-color: #ef4444; /* red-500 */
+  color: #fff;
+  padding: 0.5rem 1.1rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #dc2626;
+}
+
+.cancel-btn {
+  background-color: #ef4444;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.6rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+}
+
+.cancel-btn:hover {
+  background-color: #dc2626;
+}
+
+/* --- Vehicle Form --- */
+
+.vehicle-form {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 4px 24px rgba(35, 110, 190, 0.15);
+  padding: 1.5rem 1rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* --- Modal Overlay --- */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+/* --- Modal Content --- */
+.modal-content {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* --- Form Title --- */
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #2b1dca;
+}
+
+/* --- Fade In Animation --- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .vehicle-card {
+    width: 100%;
+    max-width: 100%;
+  }
+  .vehicle-details {
+    flex-direction: column;
+  }
+  .vehicle-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Form Actions */
+/* --- Form Section Styling --- */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.form-section label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: #333052;
+}
+
+/* --- Input Field Styling --- */
+.vehicle-form input {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #d1d5db;
+  font-size: 1rem;
+  background-color: #f9f9fc;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.vehicle-form input:focus {
+  border-color: #8b5cf6;
+  outline: none;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+}
+
+/* --- Form Title --- */
+.form-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #8b5cf6;
+}
+
+/* --- Button Styling (already good, just polish) --- */
+.add-btn,
+.cancel-btn {
+  padding: 0.75rem 1.5rem;
+  font-weight: 700;
+  border-radius: 0.6rem;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.add-btn {
+  background-color: #22c55e;
+  color: white;
+}
+
+.add-btn:hover {
+  background-color: #16a34a;
+}
+
+.cancel-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.cancel-btn:hover {
+  background-color: #dc2626;
+}
+
+/* --- Responsive Form Layout --- */
+@media (max-width: 768px) {
+  .vehicle-form {
+    padding: 1rem;
+  }
+
+  .form-section {
+    margin-bottom: 1rem;
+  }
+
+  .form-actions {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+
+
+/* Services */
+.services-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: #f9f7fe;
+}
+
+.services-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(140, 55, 220, 0.14);
+  max-width: 700px;
+  width: 100%;
+  line-height: 1.6;
+  color: #333052;
+}
+
+.services-title {
+  font-size: 2rem;
+  color: #8b5cf6;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.services-card h3 {
+  margin-top: 1.5rem;
+  color: #4c1d95;
+}
+
+.services-card ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.services-card li {
+  margin-bottom: 0.5rem;
+}
+
+/* AboutUs styles */
+.about-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: #f9f7fe;
+}
+
+.about-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(140, 55, 220, 0.14);
+  max-width: 700px;
+  width: 100%;
+  line-height: 1.6;
+  color: #333052;
+}
+
+.about-title {
+  font-size: 2rem;
+  color: #8b5cf6;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.about-card h3 {
+  margin-top: 1.5rem;
+  color: #4c1d95;
+}
+
+.about-card ul {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+}
+
+.about-card li {
+  margin-bottom: 0.5rem;
+}
+
+/* Contact.js Styles */
+.contact-container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  background-color: #f9f7fe;
+}
+
+.contact-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 16px rgba(140, 55, 220, 0.14);
+  max-width: 600px;
+  width: 100%;
+  line-height: 1.6;
+  color: #333052;
+}
+
+.contact-title {
+  font-size: 2rem;
+  color: #8b5cf6;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact-card h3 {
+  margin-top: 1.5rem;
+  color: #4c1d95;
+}
+
+.contact-footer {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #555;
+}
+.contact-profile-icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  display: block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Home.js  Styles*/
+.home-container {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #f3f4f6, #e0f2fe);
+}
+
+.home-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4c1d95;
+  margin-bottom: 0.5rem;
+}
+
+.home-subtitle {
+  font-size: 1.2rem;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.vehicle-marquee {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.vehicle-image {
+  height: 120px;
+  width: 100%;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.vehicle-image:hover {
+  transform: scale(1.05);
+}
+
+
+
+
+.home-container {
+  text-align: center;
+  padding: 2rem;
+  background: linear-gradient(to right, #f3f4f6, #e0f2fe);
+  overflow: hidden;
+}
+
+.home-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #4c1d95;
+  margin-bottom: 0.5rem;
+}
+
+.home-subtitle {
+  font-size: 1.2rem;
+  color: #374151;
+  margin-bottom: 1.5rem;
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.slider-track {
+  display: flex;
+  animation: slideVehicles 36s linear infinite;
+  gap: 1rem;
+}
+
+.vehicle-card {
+  min-width: 50px;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 0.5rem;
+  text-align: center;
+
+}
+
+.vehicle-image {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+
+}
+
+.vehicle-label {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+/* Animation: 12 images × 3s = 36s total */
+@keyframes slideVehicles {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Home styles in Drivers and Vehicles */
+.home-container {
+  padding: 2rem;
+  background: linear-gradient(to bottom right, #e0f7fa, #ffe0f0);
+}
+
+.marquee-banner {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2c3e50;
+  background-color: #f0f8ff;
+  padding: 0.5rem 1rem;
+  border-bottom: 2px solid #ccc;
+}
+
+.gallery-title {
+  font-size: 1.3rem;
+  margin: 1rem 0;
+  color: #333;
+  text-align: center;
+}
+
+.slider-wrapper {
+  overflow-x: auto;
+  padding: 1rem;
+  scroll-behavior: smooth;
+}
+
+.slider-track {
+  display: flex;
+  gap: 1rem;
+  min-width: max-content;
+  animation: scrollSlow 40s linear infinite;
+}
+
+@keyframes scrollSlow {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.edit-btn {
+  background-color: #ffc107;
+  color: black;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+}
+
+.edit-btn:hover {
+  background-color: #e0a800;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 400px;
+}
+
+
+.vehicle-card {
+  background: #f9f9f9;
+  border-radius: 10px;
+  padding: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  min-width: 100px;
+  text-align: center;
+}
+
+.vehicle-image {
+  width: 80%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.vehicle-label {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.driver-card-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.driver-card {
+  background-color: #fff;
+  border: 2px solid #28a745;
+  border-radius: 10px;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: left;
+}
+
+.driver-card h4 {
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+.driver-card p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+}
+
+.track-btn {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.track-btn:hover {
+  background-color: #0056b3;
+}
+
+
+/* Scrollbar Styling */
+.mode-badge {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.mode-badge.onduty {
+  background-color: #4caf50;
+  color: white;
+}
+
+.mode-badge.available {
+  background-color: #2196f3;
+  color: white;
+}
+
+.mode-badge.unavailable {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Search Bar Styles */
+.search-bar {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+}
+
+.search-bar input {
+  width: 90%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  outline: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+}
+
+/* Mobile View Styles */
+/* Mobile View - Small Devices (320px to 480px) */
+@media (max-width: 480px) {
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .login-container,
+  .welcome-container {
+    width: 100vw !important;
+    height: 100vh !important;
+    max-width: 100%;
+    padding: 20px !important;
+    box-sizing: border-box;
+  }
+
+  .login-form,
+  form {
+    width: 100% !important;
+    padding: 15px !important;
+    margin: 0 auto;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+
+  h1, h2 {
+    font-size: 24px;
+    margin: 20px 0;
+  }
+
+  p {
+    font-size: 14px;
+  }
+}
+
+/* Tablet View (481px to 768px) */
+@media (max-width: 768px) {
+  .login-container,
+  .welcome-container {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  input[type="email"],
+  input[type="password"],
+  input[type="text"] {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
