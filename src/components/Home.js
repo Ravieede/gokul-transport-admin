@@ -69,9 +69,9 @@ export default function Home({ drivers = [], vehicles = [] }) {
 
   return (
     <div className="home-container">
-      <marquee behavior="scroll" direction="right" className="marquee-banner">
-        🚗 Wel Come To Gokul Transport... 🚗
-      </marquee>
+      <div className="scroll-text">
+  Welcome to Gokul Transport
+</div>
 
       {/* Vehicle Image Slider */}
       <div className="slider-wrapper">
