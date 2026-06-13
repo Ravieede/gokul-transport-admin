@@ -1,6 +1,6 @@
 // src/api.js
 
-const API_BASE_URL = 'http://localhost:9001/api';
+const API_BASE_URL = 'https://gokul-transport-backend-production.up.railway.app/api';
 
 // ===================== USER APIs =====================
 export const registerUser = async (name, email, password) => {
