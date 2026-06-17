@@ -20,6 +20,7 @@ const Dashboard = ({ user, onLogout }) => {
             className="mobile-menu-toggle" 
             onClick={toggleMobileMenu}
             aria-label="Toggle menu"
+            title="Toggle menu"
           >
             ☰
           </button>
