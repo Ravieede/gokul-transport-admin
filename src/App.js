@@ -1,4 +1,5 @@
 // src/App.js
+
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AuthForm from './components/AuthForm';
@@ -13,7 +14,13 @@ import { getDrivers, getVehicles } from './api';
 import './App.css';
 
 export default function App() {
-  const [user, setUser] = useState(null);
+
+  // Load user from localStorage on page refresh
+  const [user, setUser] = useState(() => {
+    const savedUser = localStorage.getItem('user');
+    return savedUser ? JSON.parse(savedUser) : null;
+  });
+
   const [drivers, setDrivers] = useState([]);
   const [vehicles, setVehicles] = useState([]);
 
@@ -22,6 +29,7 @@ export default function App() {
       try {
         const d = await getDrivers();
         const v = await getVehicles();
+
         setDrivers(d);
         setVehicles(v);
       } catch (error) {
@@ -34,23 +42,41 @@ export default function App() {
     }
   }, [user]);
 
-  const handleLoginSuccess = (loggedInUser) => setUser(loggedInUser);
-  const handleLogout = () => setUser(null);
+  // Save login user in localStorage
+  const handleLoginSuccess = (loggedInUser) => {
+    localStorage.setItem('user', JSON.stringify(loggedInUser));
+    setUser(loggedInUser);
+  };
+
+  // Remove user on logout
+  const handleLogout = () => {
+    localStorage.removeItem('user');
+    setUser(null);
+  };
 
   const ProtectedRoute = ({ children }) => {
-    return user ? children : <Navigate to="/" />;
+    return user ? children : <Navigate to="/" replace />;
   };
 
   return (
     <Router>
       <div className="app-main-container">
-        {user && <Dashboard user={user} onLogout={handleLogout} />}
+
+        {user && (
+          <Dashboard
+            user={user}
+            onLogout={handleLogout}
+          />
+        )}
 
         <Routes>
+
           <Route
             path="/"
             element={
-              user ? <Navigate to="/home" /> : <AuthForm onLoginSuccess={handleLoginSuccess} />
+              user
+                ? <Navigate to="/home" replace />
+                : <AuthForm onLoginSuccess={handleLoginSuccess} />
             }
           />
 
@@ -58,7 +84,10 @@ export default function App() {
             path="/home"
             element={
               <ProtectedRoute>
-                <Home drivers={drivers} vehicles={vehicles} />
+                <Home
+                  drivers={drivers}
+                  vehicles={vehicles}
+                />
               </ProtectedRoute>
             }
           />
@@ -107,6 +136,7 @@ export default function App() {
               </ProtectedRoute>
             }
           />
+
         </Routes>
       </div>
     </Router>
